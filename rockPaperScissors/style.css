@@ -1,6 +1,7 @@
 div.container {
     height: 10em;
     position: relative }
+    
 div.container p {
     margin: 0;
     background: yellow;
