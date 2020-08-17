@@ -1,70 +1,29 @@
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" type="text/css" href="styles.css">
 <head>
   <title> Rock Paper Scissors </title>
 </head>
 <body>
-  <div id="container">
+  <div class=container id="container1">
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
-    <button id="scissor">Scissor</button>
+    <button id="scissors">Scissors</button>
+
+  <p id="currentRound">
+    Current round : 1
+  </p>
+  <p id="currentUserScore">
+    Your score : 0
+  </p>
+  <p id="currentComputerScore">
+    Computer score : 0
+  </p>
+
   </div>
-  <script>
-    //Computer plays rock, paper or scissors randomly
-    function computerPlay() {
-      let random = getRandomInt(0,3);
-      if (random == 0) return "Rock";
-      else if (random == 1) return "Paper";
-      else return "Scissors";
-    }
 
-    //helper random 0-1-2 (Rock, paper, Scissors)
-    function getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    function playRound(playerSelection, computerSelection) {
-      //make it into standard format, only first letter capitalize
-      playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
-      //draws
-      if (playerSelection == computerSelection) return draw(playerSelection, computerSelection);
-      //all others
-      else if (playerSelection == "Rock" && computerSelection == "Paper") {
-        return lose(playerSelection, computerSelection);
-      }
-      else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        return win(playerSelection, computerSelection);
-      }
-      else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-        return lose(playerSelection, computerSelection);
-      }
-      else if (playerSelection == "Paper" && computerSelection == "Rock") {
-        return win(playerSelection, computerSelection);
-      }
-      else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-        return lose(playerSelection, computerSelection);
-      }
-      else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-        return win(playerSelection, computerSelection);
-      }
-    }
-
-    //helper to clean code
-    function win(playerSelection, computerSelection) {
-      return `You win! ${playerSelection} beats ${computerSelection}`;
-    }
-
-    function lose(playerSelection, computerSelection) {
-      return `You lose! ${computerSelection} beats ${playerSelection}`;
-    }
-
-    function draw(playerSelection, computerSelection) {
-      return `Draw! ${playerSelection} is equal to ${computerSelection}`;
-    }
-
+<!--
+<script>
     function game() {
       let userScore = 0;
       let computerScore = 0;
@@ -90,13 +49,8 @@
         console.log(lose(userScore, computerScore));
       }
     }
-
-
-    const playerSelection = 'rock';
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
   </script>
-
+-->
   <script src="myScripts.js"></script>
 </body>
 </html>
