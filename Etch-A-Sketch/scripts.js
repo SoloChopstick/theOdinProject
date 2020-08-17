@@ -1,31 +1,41 @@
-let container = document.getElementById('container');
+const container = document.getElementById('container');
+const reset = document.querySelector("#reset");
+
+makeGrid(16,16);
+draw();
+
+//Listener for reset button
+reset.addEventListener('click', resetGrid);
+
+function resetGrid() {
+  //remove everything
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach((item) => {
+    item.remove();
+  });
+  //prompt for size
+  let gridSize = prompt("Please enter desired grid size");
+  makeGrid(gridSize, gridSize);
+  draw();
+}
+
+
 function makeGrid(rows, cols) {
   //set CSS variables to show how many rows and cols
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
   for (let i = 0; i < (rows*cols); i++) {
     let cell = document.createElement("div");
-    cell.innerText = (i + 1);
+    //cell.innerText = (i + 1);
     container.appendChild(cell).className = "grid-item";
   }
 }
 
-window.onload = function(){
-  const generate = document.querySelector("#generate");
-  generate.addEventListener('click', function () {
-    makeGrid(16, 16);
-  });
-
-  let containerGrid = document.querySelectorAll('.grid-item');
-  containerGrid.forEach(item => {
-    item.addEventListener('mouseenter', event => {
-      item.style.background = 'red';
+function draw() {
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach((item) => {
+    item.addEventListener("mouseenter", function() {
+      item.classList.add("draw");
     });
   });
-
-  //testing mouse enter event listener
-  container.addEventListener('mouseenter', e => {
-    container.style.background = 'grey';
-  });
-
 }
