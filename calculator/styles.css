@@ -1,0 +1,69 @@
+html {
+    text-align: center;
+    font-family: monospace;
+}
+table {
+  align-content: center;
+  width: 25%;
+  border: 5px solid black;
+  padding: 5px;
+  table-layout: fixed;
+}
+td {
+  text-align: center;
+  vertical-align: center;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  background-color: azure;
+}
+
+#result {
+  text-align:right;
+  font-size: 1.9em;
+  padding: 15px 32px;
+  border: 5px solid black;
+}
+.btn {
+  background-color: grey;
+  border: 2px solid black;
+  color: white;
+  font-size: 3em;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 32px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.operator_btn {
+  background-color: orange;
+  border: 2px solid black;
+  color: white;
+  font-size: 3em;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 32px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.unique_btn {
+  background-color: blue;
+  border: 2px solid black;
+  color: white;
+  font-size: 3em;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 32px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.title {
+
+}
